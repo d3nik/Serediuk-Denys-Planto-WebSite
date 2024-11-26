@@ -9,10 +9,10 @@
     
     @include mobile {
         padding-top: 20px;
-        padding-bottom: 40px;
+        padding-bottom: 80px;
         
         .container {
-            width: 95%;
+            width: 99%;
         }
     }
 
@@ -25,15 +25,27 @@
         border: 2px solid rgba(255,255,255,0.14);
         box-shadow: 0px 18px 22px -6px #00000040;
         background: $cards-white;
+        opacity: 1;
+        transform: translateX(0%);
+        transition: transform 250ms ease, opacity 250ms ease;
+
+        &.non-active {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+
 
         @include tablet {
             margin-inline: auto;
+            background-color: #00000040;
             width: 95%;
         }
 
         @include mobile {
-            margin-inline: auto;
-            width: 100%;
+            position: fixed;
+            z-index: 999;
+            background-color: #00000040;
+            width: 99%;
         }
     }
 }
@@ -184,6 +196,18 @@
                     width: 70%;
                     height: auto;
                 }
+            }
+        }
+
+        &.burger-icon {
+            display: none;
+
+            @include tablet {
+                display: block;
+            }
+
+            @include mobile {
+                display: block;
             }
         }
     }

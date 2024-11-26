@@ -4,6 +4,10 @@ body {
     font-family: $general-font;
     font-style: normal;
     line-height: normal;
+
+    &.no-scroll {
+        overflow: hidden;
+    }
 }
 
 .container {
