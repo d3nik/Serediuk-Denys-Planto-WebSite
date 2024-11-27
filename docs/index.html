@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./css/modern-normalize.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/scss/main.min.css">
     <link rel="stylesheet" href="./css/style.css">
 
@@ -25,7 +25,7 @@
                     
                     <nav class="navigation">
                         <ul class="navigation-list">
-                            <li class="navigation-list-link"><a href="">Home</a></li>
+                            <li class="navigation-list-link"><a href="index.html">Home</a></li>
                             <li class="navigation-list-link">
                                 <div class="dropdown">
                                     <button class="drop-button">Plants Type
@@ -34,9 +34,9 @@
                                         </svg>
                                     </button>
                                     <div class="dropdown-content">
-                                      <a href="#">Link 1</a>
-                                      <a href="#">Link 2</a>
-                                      <a href="#">Link 3</a>
+                                      <a href="#trendy">Trendy plants</a>
+                                      <a href="#top">Top selling plants</a>
+                                      <a href="#oxygen">Best oxygen plants</a>
                                     </div>
                                 </div>
                             </li>
@@ -47,21 +47,21 @@
             
                     <ul class="header-icons-list">
                         <li class="icons-list-item">
-                            <a href="#">
+                            <a href="">
                                 <svg height="23" width="23">
                                     <use href="./images/icons/icon.svg#icon-search"></use>
                                 </svg>
                             </a>
                         </li>
                         <li class="icons-list-item">
-                            <a href="#">
+                            <a href="">
                                 <svg height="23" width="23">
                                     <use href="./images/icons/icon.svg#icon-shopping-bag"></use>
                                 </svg>
                             </a>
                         </li>
-                        <li class="icons-list-item">
-                            <a href="#">
+                        <li class="icons-list-item burger-icon">
+                            <a data-burger-open>
                                 <svg height="11" width="27">
                                     <use href="./images/icons/icon.svg#icon-burger-menu"></use>
                                 </svg>
@@ -69,6 +69,36 @@
                         </li>
                     </ul>
                 </div>
+            </div>
+
+            <div class="mobile-menu" data-burger>
+                <button class="mobile-burger-close-button" type="button" data-burger-close>
+                  <svg class="burger-button-icon" width="23" height="37">
+                    <use href="./images/icons/icon.svg#icon-burger-menu"></use>
+                  </svg>
+                </button>
+        
+                <nav class="mobile-menu-navigation">
+                  <ul class="mobile-menu-navigation-list">
+                    <li><a href="index.html" class="mobile-menu-navigation-link">Home</a></li>
+                    <li>
+                        <div class="mobile-menu-dropdown">
+                            <button class="drop-button">Plants Type
+                                <svg height="15" width="20">
+                                    <use href="./images/icons/icon.svg#icon-drop"></use>
+                                </svg>
+                            </button>
+                            <div class="dropdown-content">
+                              <a href="#trendy" class="mobile-menu-navigation-link small" data-burger-close>Trendy plants</a>
+                              <a href="#top" class="mobile-menu-navigation-link small" data-burger-close>Top selling plants</a>
+                              <a href="#oxygen" class="mobile-menu-navigation-link small" data-burger-close>Best oxygen plants</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="" class="mobile-menu-navigation-link">More</a></li>
+                    <li><a href="" class="mobile-menu-navigation-link">Contact</a></li>
+                </ul>
+                </nav>
             </div>
         </header>
 
@@ -129,9 +159,7 @@
                     </div> -->
 
                     <div class="swiper">
-                        <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
-                          <!-- Slides -->
                             <div class="swiper-slide card plant-card">
                                 <img src="./images/plants-images/Plant-one.png" alt="Calathea plant" width="404" height="404" class="plant-card-image">
                                 <div class="figcaption">
@@ -175,7 +203,7 @@
             </div>
         </section>    
 
-        <section class="trendy-section">
+        <section class="trendy-section" id="trendy">
             <div class="container">
                 <div class="heading">
                     <svg height="60" width="60" class="heading-left-icon">
@@ -229,7 +257,7 @@
     </div>
     
     <main class="content">
-        <section class="top-selling-section">
+        <section class="top-selling-section" id="top">
             <div class="container">
                 
                 <div class="heading">
@@ -439,7 +467,7 @@
             </div>
         </section>
 
-        <section class="best-section">
+        <section class="best-section" id="oxygen">
             <div class="container">
                 <div class="heading">
                     <svg height="60" width="60" class="heading-left-icon">
@@ -618,36 +646,38 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-left-side">
-                <span class="footer-logo">
-                    <span class="footer-logo-icon"><img src="./images/planto.png" alt="logo" width="82" height="82"></span>
-                    <span class="footer-logo-text">Planto.</span>
-                </span>
-
-                <p class="footer-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
+            <div class="footer-top">
+                <div class="footer-left-side">
+                    <span class="footer-logo">
+                        <span class="footer-logo-icon"><img src="./images/planto.png" alt="logo" width="82" height="82"></span>
+                        <span class="footer-logo-text">Planto.</span>
+                    </span>
     
-            <div class="footer-center">
-                <h3 class="footer-heading-text">Quick Link’s</h3>
-
-                <ul class="footer-links-list">
-                    <li class="footer-link"><a href="">Home</a></li>
-                    <li class="footer-link"><a href="">Type’s Of plant’s</a></li>
-                    <li class="footer-link"><a href="">Contact</a></li>
-                    <li class="footer-link"><a href="">Privacy</a></li>
-                </ul>
-            </div>
+                    <p class="footer-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+        
+                <div class="footer-center">
+                    <h3 class="footer-heading-text">Quick Link’s</h3>
     
-            <div class="footer-right-side">
-                <h3 class="footer-heading-text">For Every Update.</h3>
-
-                <form class="email-update-form">
-                    <label class="email-update-label" for="reply_to">
-                        <span class="is-hidden">Email</span>
-                        <input name="reply_to" type="email" placeholder="Enter email" class="email-update-input" required>
+                    <ul class="footer-links-list">
+                        <li class="footer-link"><a href="">Home</a></li>
+                        <li class="footer-link"><a href="">Type’s Of plant’s</a></li>
+                        <li class="footer-link"><a href="">Contact</a></li>
+                        <li class="footer-link"><a href="">Privacy</a></li>
+                    </ul>
+                </div>
+        
+                <div class="footer-right-side">
+                    <h3 class="footer-heading-text">For Every Update.</h3>
+    
+                    <form class="email-update-form">
+                        <label class="email-update-label">
+                            <span class="is-hidden">Email</span>
+                            <input name="to" type="email" placeholder="Enter email" class="email-update-input" required>
+                        </label>
                         <button type="submit" class="email-submit-button">Subscribe</button>
-                    </label>
-                </form>
+                    </form>
+                </div>
             </div>
 
             <div class="footer-lower">
@@ -664,10 +694,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/swiper.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        emailjs.init('dJyKkms3ahuWUx8Uu')
-      </script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="./js/emailSending.js"></script>
+    <script src="./js/burger.js"></script>
 </body>
 </html>

@@ -3,11 +3,23 @@
     padding: 79px 29px 77px 54px;
     background-color: $footer-green;
 
+    @include tablet {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    @include mobile {
+        padding: 67px 0px 60px 0px;
+    }
+
     .container {
         display: flex;
-        flex-wrap: wrap;
-        column-gap: 140px;
-        row-gap: 90px;
+        flex-direction: column;
+        gap: 90px;
+        
+        @include mobile {
+            width: 95%;
+        }
     }
 
     .footer-heading-text {
@@ -15,6 +27,33 @@
         line-height: 1.25;
         font-weight: 800;
         margin-bottom: 50px;
+
+        @include tablet {
+            max-width: fit-content;
+            margin-inline: auto;
+        }
+        
+        @include mobile {
+            max-width: fit-content;
+            margin-inline: auto;
+        }
+    }
+
+    /* Footer top */
+
+    .footer-top {
+        display: flex;
+        gap: 130px;
+
+        @include tablet {
+            flex-direction: column;
+            gap: 90px;
+        }
+        
+        @include mobile {
+            flex-direction: column;
+            gap: 70px;
+        }
     }
 
     /* Footer left side */
@@ -22,14 +61,38 @@
     .footer-left-side {
         font-size: 24px;
         line-height: 1.25;
+        max-width: fit-content;
+
+        @include tablet {
+            margin-inline: auto;
+        }
+
+        @include mobile {
+            margin-inline: auto;
+        }
 
         .footer-logo{
             display: flex;
             user-select: none;
             margin-bottom: 43px;
+
+            @include tablet {
+                justify-content: center;
+            }
+
+            @include mobile {
+                justify-content: center;
+            }
             
             .footer-logo-icon {
                 display: flex;
+
+                @include mobile {
+                    img {
+                        width: 70px;
+                        height: 70px;
+                    }
+                }
             }
             .footer-logo-text {
                 align-self: flex-end;
@@ -38,12 +101,24 @@
                 line-height: 1.21;
                 font-weight: 900;
                 margin-left: 13px;
+                
+                @include mobile {
+                    font-size: 43px;
+                }
             }
         }
         
         .footer-text {
             max-width: 520px;
             font-weight: 500;
+
+            @include tablet {
+                text-align: center;
+            }
+            
+            @include mobile {
+                text-align: center;
+            }
         }
     }
 
@@ -58,12 +133,35 @@
             display: flex;
             flex-direction: column;
             gap: 26px;
+
+            @include tablet {
+                justify-self: center;
+            }
+            
+            @include mobile {
+                justify-self: center;
+                gap: 20px;
+            }
         }
 
         .footer-link {
+            @include tablet {
+                text-align: center;
+            }
+            
+            @include mobile {
+                text-align: center;
+            }
+
             a {
                 color: $general-white;    
                 text-decoration: none;
+                transition: color 0.3s ease-in-out;
+                text-wrap: nowrap;
+
+                &:hover {
+                    color: $hover-green;
+                }
             }
         }
     }
@@ -75,15 +173,32 @@
         line-height: 1.22;
         font-weight: 500;
 
+        @include tablet {
+            margin-inline: auto;
+        }
+        
+        @include mobile {
+            margin-inline: auto;
+        }
+
         .email-update-form {
             display: flex;
+            position: relative;
             
             .email-update-label {
                 position: relative;
-                max-width: 494px;
                 border: 2px solid $general-white;
                 border-radius: 8px;
                 padding: 19px 3.5px 19px 25px;
+                transition: border-color 0.3s ease-in-out;
+
+                @include mobile {
+                    padding: 14px 3.5px 14px 15px ;
+                }
+
+                &:only-child:hover {
+                    border-color: $hover-green;
+                }
 
                 .email-update-input {
                     background-color: transparent;
@@ -95,18 +210,28 @@
                     opacity: 75%;
                 }
 
-                .email-submit-button {
-                    position: absolute;
-                    right: 3px; 
-                    top: 3.5px;
-                    bottom: 3.5px;
-                    padding: 16px 17px;
-                    border: none;
-                    border-radius: 8px;
-                    text-transform: uppercase;
-                    font-size: 19px;
-                    line-height: 1.23;
-                    font-weight: 700;
+            }
+            .email-submit-button {
+                position: absolute;
+                right: 3px; 
+                top: 3.5px;
+                bottom: 3.5px;
+                padding: 16px 17px;
+                border: none;
+                border-radius: 8px;
+                text-transform: uppercase;
+                font-size: 19px;
+                line-height: 1.23;
+                font-weight: 700;
+                transition: color 0.3s ease-in-out,  background-color 0.3s ease-in-out;
+
+                @include mobile {
+                    padding: 10px 12px;
+                }
+
+                &:hover {
+                    background-color: $hover-green;
+                    color: $general-white;
                 }
             }
         }
@@ -116,7 +241,16 @@
     /* footer-lower */
 .footer-lower {
     display: flex;
-    width: 100%;
+
+    @include tablet {
+        margin-inline: 10px;
+    }
+    
+    @include mobile {
+        align-items: center;
+        flex-direction: column;
+        gap: 15px;
+    }
     
     .footer-social-list {
         display: flex;
@@ -129,15 +263,28 @@
             a {
                 color: $general-white;
                 text-decoration: none;
+                transition: color 0.3s ease-in-out;
+
+                &:hover {
+                    color: $hover-green;
+                }
             }
         }
     }
 
     .footer-rights {
         margin-left: auto;
-        margin-right: 235px;
+        margin-right: 245px;
         font-size: 21px;
         line-height: 1.22;
         font-weight: 500;
+
+        @include tablet {
+            margin-right: 0;
+        }
+        
+        @include mobile {
+            margin: 0;
+        }
     }
 }
